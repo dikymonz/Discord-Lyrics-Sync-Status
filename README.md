@@ -1,1 +1,0 @@
-# Discord-Lyrics-Sync-Status
