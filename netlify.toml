@@ -1,4 +1,7 @@
 [build]
   command = "npm run build"
   functions = "netlify/functions"
-  publish = "public"   # atau dist kalau pakai frontend
+  publish = "dist"          # atau "static" kalau kamu pakai static folder
+
+[functions]
+  node_bundler = "esbuild"
