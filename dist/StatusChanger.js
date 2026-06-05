@@ -20,8 +20,7 @@ class StatusChanger {
             body: JSON.stringify({
                 custom_status: {
                     text,
-                    emoji_id: null,
-                    emoji_name: emoji,
+                   
                     expires_at: new Date(Date.now() + 60000).toISOString()
                 }
             })
@@ -72,7 +71,7 @@ class StatusChanger {
         return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0') + s;
     }
     getStatusString(line) {
-        return `${Settings_1.Settings.view.timestamp ? `[${this.formatSeconds(+(line.time / 1000).toFixed(0))}] ` : ""}${Settings_1.Settings.view.label ? "Song lyrics - " : ""}${line.text.replace("♪", "🎶")}`.slice(0, 128);
+        return `${Settings_1.Settings.view.timestamp ? `[${this.formatSeconds(+(line.time / 1000).toFixed(0))}] ` : ""}${Settings_1.Settings.view.label ? "" : ""}${line.text.replace("", "")}`.slice(0, 128);
     }
     parseStatusString(status) {
         if (this.playbackState.currentLine) {
